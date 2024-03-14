@@ -1,0 +1,13 @@
+package com.hackathon.task.category;
+
+import java.util.List;
+
+
+
+public interface CategoryService {
+	 CategoryEntity createCategory(CategoryEntity Category);
+	 CategoryEntity updateCategory(CategoryEntity Category, Integer userId);
+	 CategoryEntity getCategoryById( Integer CategoryId);
+	 List<CategoryEntity> getAllCategory();
+	 void deleteCategory(Integer CategoryId);
+}

@@ -1,0 +1,43 @@
+package com.hackathon.task.product;
+
+import java.util.List;
+
+public class ProductServiceImpl implements ProductService {
+
+	@Override
+	public ProductEntity createPost(ProductEntity postDTO, Integer userId, Integer categoryId) {
+		
+		return null;
+	}
+
+	@Override
+	public void deletePost(Integer postId) {
+	
+
+	}
+
+	@Override
+	public ProductEntity getPostById(Integer id) {
+	
+		return null;
+	}
+
+	@Override
+	public ProductEntity getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDirection) {
+		
+		return null;
+	}
+
+	@Override
+	public List<ProductEntity> searchPost(String keyword) {
+		
+		return null;
+	}
+
+	@Override
+	public ProductEntity updatePost(ProductEntity postDTO, Integer postId) {
+		
+		return null;
+	}
+
+}

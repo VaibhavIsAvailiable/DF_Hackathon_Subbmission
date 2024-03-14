@@ -1,0 +1,5 @@
+package com.hackathon.task.product;
+
+public interface ProductRepo {
+
+}

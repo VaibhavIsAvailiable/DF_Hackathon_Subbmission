@@ -1,0 +1,62 @@
+package com.hackathon.task.user;
+
+import java.util.List;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.hackathon.task.globalexceptions.ResourceNotFoundException;
+
+@Service
+public class UserServiceImpl implements UserService {
+
+	@Autowired
+	private ModelMapper modelMapper;
+
+	@Autowired
+	private UserRepo userRepo;
+
+	@Override
+	public UserDTO createUser(UserDTO user) {
+		UserEntity newUser = this.modelMapper.map(user, UserEntity.class);
+		UserEntity savedUser = this.userRepo.save(newUser);
+
+		return this.modelMapper.map(savedUser, UserDTO.class);
+	}
+
+	@Override
+	public UserDTO updateUser(UserDTO user, Integer userId) {
+		UserEntity oldUserEntity;
+		UserEntity getUser = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
+
+		getUser.setAbout(user.getAbout());
+		getUser.setEmail(user.getEmail());
+		getUser.setName(user.getName());
+        getUser.setMobileNumber(user.getMobileNumber());
+		UserEntity updatedUser = this.userRepo.save(getUser);
+		return this.modelMapper.map(updatedUser, UserDTO.class);
+
+	}
+
+	@Override
+	public UserDTO getUserById(Integer userId) {
+		UserEntity user = this.userRepo.findById(userId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
+		return this.modelMapper.map(user, UserDTO.class);
+		
+	}
+
+	@Override
+	public List<UserDTO> getAllUsers() {
+
+		return null;
+	}
+
+	@Override
+	public void deleteUser(Integer userId) {
+
+	}
+
+}

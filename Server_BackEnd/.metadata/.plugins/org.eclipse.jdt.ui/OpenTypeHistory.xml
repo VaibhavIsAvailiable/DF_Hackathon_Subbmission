@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<typeInfoHistroy>
+    <typeInfo handle="=Hackathon_Backend/\/usr\/lib\/jvm\/java-17-openjdk-amd64\/lib\/jrt-fs.jar`java.base=/maven.pomderived=/true=/&lt;java.nio.file.attribute(UserPrincipal.class[UserPrincipal" modifiers="1537" timestamp="1697701427000"/>
+    <typeInfo handle="=Hackathon_Backend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hackathon.task.user{UserService.java[UserService" modifiers="513" timestamp="1710266832965"/>
+    <typeInfo handle="=Hackathon_Backend/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.hackathon.task.product{ProductService.java[ProductService" modifiers="513" timestamp="1710318403352"/>
+</typeInfoHistroy>

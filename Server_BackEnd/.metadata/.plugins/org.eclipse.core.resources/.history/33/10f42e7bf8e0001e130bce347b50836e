@@ -1,0 +1,51 @@
+package com.hackathon.task.category;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.hackathon.task.globalexceptions.ResourceNotFoundException;
+
+
+public class CategoryServiceImpl implements CategoryService {
+	@Autowired
+	CategoryEntity categoryEntity;
+	
+	@Autowired
+	CategoryRepo categoryRepo; 
+
+	@Override
+	public CategoryEntity createCategory(CategoryEntity Category) {
+		CategoryEntity categoryEntity = this.categoryRepo.save(Category);
+		return categoryEntity;
+	}
+
+	@Override
+	public CategoryEntity updateCategory(CategoryEntity Category, Integer userId) {
+		
+		return null;
+	}
+
+	@Override
+	public CategoryEntity getCategoryById(Integer CategoryId) {
+		
+		return null;
+	}
+
+	@Override
+	public List<CategoryEntity> getAllCategory() {
+	
+		
+		return null;
+	}
+
+	@Override
+	public void deleteCategory(Integer CategoryId) {
+		CategoryEntity categoryEntity = this.categoryRepo.findById(CategoryId)
+				.orElseThrow(() -> new ResourceNotFoundException("User", "id", CategoryId));
+		this.categoryRepo.delete(categoryEntity);
+		
+	}
+
+	
+}

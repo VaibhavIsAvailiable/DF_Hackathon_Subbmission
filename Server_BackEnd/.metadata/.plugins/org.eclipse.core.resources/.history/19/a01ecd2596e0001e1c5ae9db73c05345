@@ -1,0 +1,11 @@
+package com.hackathon.task.user;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+@EnableJpaRepositories
+public interface UserRepo  extends JpaRepository<UserEntity, Integer>{
+
+	  @Query("SELECT u FROM UserEntity u WHERE u.email = ? AND u.password = ?")
+	    UserEntity findByEmailAndPassword(String email, String password);
+}
